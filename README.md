@@ -1,9 +1,9 @@
-<h1>Outfitter</h1>
+# Outfitter #
 
 Check it out on heroku:
 <a>https://outfitters1.herokuapp.com/</a>
 
-Overview
+## Overview ##
 With Outfitter, users can create a digital closet and combine clothing items into outfits.
 
 
