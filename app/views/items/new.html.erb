@@ -1,29 +1,32 @@
 <%= render "shared/header" %>
+
 <div class="container">
   <h4 class="center-align">Add new item</h4>
+
   <%= form_for @item do |f| %>
-    <ul>
-    <li><span style="color:red">*</span><%= f.label :name, 'Item description'%>
+  <ul>
+    <li>
+      <span style="color:red">*</span>
+      <%= f.label :name, 'Item description'%>
       <%= f.text_field :name, required: true %>
-     </li> 
-
-     <li><span style="color:red">* </span><%= f.label :brand, 'Brand' %>
-        <%= f.text_field :brand, required: true %></li>
-      <li><span style="color:red">* </span><%= f.label :category, 'Select: pants, shirts or shoes' %>
-        <%= f.text_field :category %></li>
-     <div class="col s12 m6 center-align">
-        <div class="form-padding center-align">
-            <%= f.file_field :image %> 
-            <button class="btn waves-effect waves-light left-align" type="submit" name="action">Submit
-            <i class="material-icons right">send</i>
-          </button></li>
-        </div>
-
-        
+    </li>
+    <li>
+      <%= f.label :brand, 'Brand' %>
+      <%= f.text_field :brand %>
+    </li>
+    <li>
+      <span style="color:red">*</span>
+      <%= f.label :category, 'Please type "pants", "shirt" or "shoes" (must match exactly)' %>
+      <%= f.text_field :category, required: true %>
+    </li>
+    <div class="col s12 m6 center-align">
+      <div class="form-padding center-align">
+        <%= f.file_field :image %>
+        <button class="btn waves-effect waves-light left-align" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+        </button>
       </div>
-    </ul>
-
+    </div>
+  </ul>
   <% end %>
 </div>
-
-
