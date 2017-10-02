@@ -1,32 +1,39 @@
 <%= render "shared/header" %>
 <div class="container">
+  <h2>Outfits</h2>
+  <p class="advice">See what outfits you&#x27;ve already created and plan your outfits for the week</p>
+
   <div class="row">
-      <div class="closet center-align">My outfits </div>
-      <p class="advice center-align">You can use this page to see what you&#x27;
-        ve already created and plan your outfits for the week</p>
-      <% @outfits.each do |outfit| %>
-            <div class="row">
-              <div class="col s12 m4 center-align">
-                    <p>
 
-                    <span class="outfit-name">
-                      <%= link_to outfit.name, controller: "outfits", action: "show", id: outfit.id %>
-                    </span><br>
-                      <span class="outfit-tag"># <%= outfit.tag %></span><br>
-                      <div>
-                        <%= link_to(@outfit, controller: "outfits", action: "show", id: outfit.id) do %>
-                        <% outfit.items.each do |item| %>
+  <% @outfits.each do |outfit| %>
 
-                        <%= image_tag item.image.url(:small) %><br>
-                        <% end %>
+    <div class="col s12 m4">
 
-                        </div>
-                        <% end %>
+      <div class="center-align">
+        <span class="outfit-name">
+          <%= link_to outfit.name, controller: "outfits", action: "show", id: outfit.id %>
+        </span>
+      </div>
 
-                        <%= link_to "Edit", controller: "outfits", action: "edit", id: outfit.id %><br>
-                    </p>
-              </div>
-            <% end %>
+      <div class="center-align">
+        <span class="outfit-tag">
+          #<%= outfit.tag %>
+        </span>
+      </div>
+
+      <%= link_to(@outfit, controller: "outfits", action: "show", id: outfit.id) do %>
+        <% outfit.items.each do |item| %>
+          <div class="center-align">
+            <%= image_tag item.image.url(:small) %>
           </div>
-        </div>
+        <% end %>
+      <% end %>
+
+      <div class="center-align">
+        <%= link_to "Edit", controller: "outfits", action: "edit", id: outfit.id %>
+      </div>
+
+    </div>
+  <% end %>
+  </div>
 </div>

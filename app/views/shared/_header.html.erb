@@ -3,17 +3,17 @@
         <a href="/items" class="brand-logo">Outfitter</a>
         <a href="#" data-activities="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="header right hide-on-med-and-down">
-            <li class="header"><%= link_to "All Items", items_path %></li>
+            <li class="header"><%= link_to "Closet", items_path %></li>
             <li class="header"><%= link_to "New Item", new_item_path %></li>
-            <li class="header"><%= link_to "All Outfits", outfits_path %></li>
+            <li class="header"><%= link_to "Outfits", outfits_path %></li>
             <li class="header"><%= link_to "New Outfit", new_outfit_path %></li>
         </ul>
         <ul id="mobile-demo" class="header side-nav">
           <li class="header"><a href="/items"></a></li>
+          <li class="header"><%= link_to "Closet", items_path %></li>
           <li class="header"><%= link_to "New Item", new_item_path %></li>
-          <li class="header"><%= link_to "All Outfits", outfits_path %></li>
+          <li class="header"><%= link_to "Outfits", outfits_path %></li>
           <li class="header"><%= link_to "New Outfit", new_outfit_path %></li>
-
         </ul>
     </div>
 </nav>
