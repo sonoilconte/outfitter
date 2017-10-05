@@ -4,6 +4,7 @@
   <h4 class="center-align">Add new item</h4>
 
   <%= form_for @item do |f| %>
+  <%= select_tag(:category, options_for_select([['Jemmy Legs', 1], ['Talos', 2]]))%>
   <ul>
     <li>
       <span style="color:red">*</span>
@@ -16,8 +17,8 @@
     </li>
     <li>
       <span style="color:red">*</span>
-      <%= f.label :category, 'Please type "pants", "shirt" or "shoes" (must match exactly)' %>
-      <%= f.text_field :category, required: true %>
+      <%= f.label :category, 'Category' %>
+      <%= f.select(:category, options_for_select([['shirt', 'shirt'], ['pants', 'pants']])) %>
     </li>
     <div class="col s12 m6 center-align">
       <div class="form-padding center-align">

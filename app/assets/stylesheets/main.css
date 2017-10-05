@@ -1,3 +1,7 @@
 .outfit-index-board {
   height: 450px;
 }
+
+select {
+  display: block;
+}
