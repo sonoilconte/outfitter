@@ -4,9 +4,11 @@
   <h4 class="center-align"><%= @outfit.name %></h4>
 
   <div class="col s12 center-align">
+
     <% shirt = @outfit.items.select{ |item| item.category == "shirt"} %>
     <% pants = @outfit.items.select{ |item| item.category == "pants"} %>
     <% shoes = @outfit.items.select{ |item| item.category == "shoes"} %>
+    
     <div class="center-align">
       <%= image_tag shirt[0].image.url(:medium) %>
     </div>

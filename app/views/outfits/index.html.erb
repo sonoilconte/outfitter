@@ -5,7 +5,9 @@
 
   <div class="row">
 
-  <% @outfits.each do |outfit| %>
+  <% outfits = @outfits.sort{ |first, last| last.updated_at <=> first.updated_at} %>
+  
+  <% outfits.each do |outfit| %>
 
     <div class="col s12 m4">
 
@@ -20,8 +22,6 @@
           #<%= outfit.tag %>
         </span>
       </div>
-
-      <!--  -->
 
       <div class="outfit-index-board">
         <%= link_to(@outfit, controller: "outfits", action: "show", id: outfit.id) do %>
