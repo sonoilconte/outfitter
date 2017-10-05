@@ -21,13 +21,15 @@
         </span>
       </div>
 
+      <!--  -->
+
       <div class="outfit-index-board">
         <%= link_to(@outfit, controller: "outfits", action: "show", id: outfit.id) do %>
-          <% outfit.items.each do |item| %>
+          <% item = outfit.items.select{ |item| item.category == "shirt" }  %>
+          <% p item[0].image.url(:small) %>
           <div class="center-align">
-            <%= image_tag item.image.url(:small) %>
+            <%= image_tag item[0].image.url(:small) %>
           </div>
-          <% end %>
         <% end %>
       </div>
 
