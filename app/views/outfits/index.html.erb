@@ -25,10 +25,18 @@
 
       <div class="outfit-index-board">
         <%= link_to(@outfit, controller: "outfits", action: "show", id: outfit.id) do %>
-          <% item = outfit.items.select{ |item| item.category == "shirt" }  %>
-          <% p item[0].image.url(:small) %>
+          <% shirt = outfit.items.select{ |item| item.category == "shirt" }  %>
+          <% pants = outfit.items.select{ |item| item.category == "pants" }  %>
+          <% shoes = outfit.items.select{ |item| item.category == "shoes" }  %>
+          <% p shirt[0].image.url(:small) %>
           <div class="center-align">
-            <%= image_tag item[0].image.url(:small) %>
+            <%= image_tag shirt[0].image.url(:small) %>
+          </div>
+          <div class="center-align">
+            <%= image_tag pants[0].image.url(:small) %>
+          </div>
+          <div class="center-align">
+            <%= image_tag shoes[0].image.url(:small) %>
           </div>
         <% end %>
       </div>
