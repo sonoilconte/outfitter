@@ -28,7 +28,6 @@
           <% shirt = outfit.items.select{ |item| item.category == "shirt" }  %>
           <% pants = outfit.items.select{ |item| item.category == "pants" }  %>
           <% shoes = outfit.items.select{ |item| item.category == "shoes" }  %>
-          <% p shirt[0].image.url(:small) %>
           <div class="center-align">
             <%= image_tag shirt[0].image.url(:small) %>
           </div>
