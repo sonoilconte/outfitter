@@ -1,23 +1,21 @@
 <%= render "shared/header" %>
+
 <div class="container">
   <div class="row">
         <h4 class="center-align">Edit your outfit</h4>
+
         <%= form_for @outfit do |f| %>
           <ul>
-            <li><%= f.label :name, 'Need a new name?'%></li>
+            <li><%= f.label :name, "Change name" %></li>
             <li><%= f.text_field :name, value: @outfit.name, placeholder: "edit outfit name" %></li>
-
-            <li><%= f.label :tag, 'Change current tag'%></li>
+            <li><%= f.label :tag, "Change tag" %></li>
             <li><%= f.text_field :tag, value: @outfit.tag, placeholder: "update current tag" %></li>
-            <div class="row center-align">
-              <div class="col s12 m6 l6">
-                 <%= button_to "Delete Outfit", { action: "destroy", id: @outfit.id }, method: "delete" %>
-              </div>
-              <div class="col s12 m6 l6">
-                  <%= f.submit "Update Outfit" %>
-              </div>
-            </div>        
+            <li><%= f.submit "Update Outfit" %></li>
           </ul>
         <% end %>
+
+        <div class="right-align">
+           <%= button_to "Delete Outfit", { action: "destroy", id: @outfit.id }, method: "delete" %>
+        </div>
   </div>
 </div>
