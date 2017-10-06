@@ -139,9 +139,6 @@ div.horizontal {
 }
 
 .btn {
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
   -webkit-box-shadow: 0px 1px 3px #666666;
   -moz-box-shadow: 0px 1px 3px #666666;
   box-shadow: 0px 1px 3px #666666;
@@ -200,11 +197,6 @@ div.horizontal {
   letter-spacing: 0.03em;
   line-height: 200%;
   font-size: 250%;
-}
-
-a {
-  color: #c4aaff;
-  text-decoration: none !important;
 }
 
 .outfit-name {
