@@ -9,7 +9,7 @@
 
   <% outfits.each do |outfit| %>
 
-    <div class="col s12 m4">
+    <div class="col s12 m4 outfit-index-board">
 
       <div class="center-align">
         <span class="outfit-name">
@@ -23,8 +23,8 @@
         </span>
       </div>
 
-      <div class="outfit-index-board">
-        <%= link_to(@outfit, controller: "outfits", action: "show", id: outfit.id) do %>
+      <div class="">
+        <%= link_to outfit, controller: "outfits", action: "show", id: outfit.id do %>
           <% shirt = outfit.items.select{ |item| item.category == "shirt" }  %>
           <% pants = outfit.items.select{ |item| item.category == "pants" }  %>
           <% shoes = outfit.items.select{ |item| item.category == "shoes" }  %>
@@ -37,12 +37,13 @@
           <div class="center-align">
             <%= image_tag shoes[0].image.url(:small) %>
           </div>
+          <div class="center-align">
+            <%= link_to "Edit", controller: "outfits", action: "edit", id: outfit.id %>
+          </div>
         <% end %>
       </div>
 
-      <div class="center-align">
-        <%= link_to "Edit", controller: "outfits", action: "edit", id: outfit.id %>
-      </div>
+
 
     </div>
   <% end %>
