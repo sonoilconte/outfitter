@@ -125,13 +125,14 @@ div.horizontal {
   max-width: 10vh;
 }
 
-.canvas {
-  max-height: 25%;
-  border: 2px dashed #ccc;
-}
-
 .builder {
   max-height: 100vh;
+}
+
+.build-box {
+  border: 2px dashed #ccc;
+  margin-top: 30px;
+  height: 100%;
 }
 
 .btn {
