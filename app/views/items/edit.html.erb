@@ -1,26 +1,22 @@
 <%= render "shared/header" %>
-
 <div class="container">
-  <h2>Edit Item</h2>
-
+  <h1>Edit Item</h1>
   <%= form_for @item do |f| %>
   <div class="row">
     <div class="col m6">
-      <label> Name </label> <br>
-      <%= f.text_field :name, value: @item.name, placeholder: "Enter new Name" %><br>
-      <label> Brand </label><br>
-      <%= f.text_field :brand, value: @item.brand, placeholder: "Enter new Brand" %><br>
-      <label> Category </label><br>
-      <%= f.text_field :category, value: @item.category, placeholder: "Enter new Category" %><br>
-      <%= f.file_field :image %><br>
+      <label> Name </label>
+      <%= f.text_field :name, value: @item.name, placeholder: "Enter new Name" %>
+      <label> Brand </label>
+      <%= f.text_field :brand, value: @item.brand, placeholder: "Enter new Brand" %>
+      <label> Category </label>
+      <%= f.text_field :category, value: @item.category, placeholder: "Enter new Category" %>
+      <%= f.file_field :image %>
       <%= f.submit "Update Item" %>
     </div>
-
     <div class="col m6">
       <%= image_tag @item.image.url(:large) %>
     </div>
   </div>
   <% end %>
-  <br><br><br><br>
   <%= button_to "Delete Item", { action: "destroy", id: @item.id }, method: :delete %>
 </div>
