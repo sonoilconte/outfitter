@@ -29,22 +29,25 @@
           <% pants = outfit.items.select{ |item| item.category == "pants" }  %>
           <% shoes = outfit.items.select{ |item| item.category == "shoes" }  %>
           <div class="center-align">
-            <%= image_tag shirt[0].image.url(:small) %>
+            <% if shirt[0] %>
+              <%= image_tag shirt[0].image.url(:small) %>
+            <% end %>
           </div>
           <div class="center-align">
-            <%= image_tag pants[0].image.url(:small) %>
+            <% if pants[0] %>
+              <%= image_tag pants[0].image.url(:small) %>
+            <% end %>
           </div>
           <div class="center-align">
-            <%= image_tag shoes[0].image.url(:small) %>
+            <% if shoes[0] %>
+              <%= image_tag shoes[0].image.url(:small) %>
+            <% end %>
           </div>
           <div class="center-align">
             <%= link_to "Edit", controller: "outfits", action: "edit", id: outfit.id %>
           </div>
         <% end %>
       </div>
-
-
-
     </div>
   <% end %>
   </div>
