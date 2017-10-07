@@ -10,9 +10,9 @@ body {
 
 h1 {
   font-weight: 400;
-  font-size: 50px;
+  font-size: 40px;
   letter-spacing: -0.03em;
-  maring: .75em 0 .25em 0;
+  margin: .75em 0 .25em 0;
 }
 
 /* LANDING PAGE start */
