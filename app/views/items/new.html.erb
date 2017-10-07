@@ -1,33 +1,16 @@
 <%= render "shared/header" %>
-
 <div class="container">
-
   <h1 class="center-align">Add new item</h1>
-
   <%= form_for @item do |f| %>
-  <ul>
-    <li>
-      <span style="color:red">*</span>
-      <%= f.label :name, 'Item description'%>
-      <%= f.text_field :name, required: true %>
-    </li>
-    <li>
-      <%= f.label :brand, 'Brand' %>
-      <%= f.text_field :brand %>
-    </li>
-    <li>
-      <span style="color:red">*</span>
-      <%= f.label :category, 'Category' %>
-      <%= f.select :category, options_for_select([['Shirt', 'shirt'], ['Pants', 'pants'], ['Shoes', 'shoes']]) %>
-    </li>
-    <div class="col s12 m6 center-align">
-      <div class="form-padding center-align">
-        <%= f.file_field :image %>
-        <button class="btn waves-effect waves-light left-align" type="submit" name="action">Submit
-          <i class="material-icons right">send</i>
-        </button>
-      </div>
-    </div>
-  </ul>
+    <span style="color:red">*</span>
+    <%= f.label :name, 'Item description'%>
+    <%= f.text_field :name, required: true %>
+    <%= f.label :brand, 'Brand' %>
+    <%= f.text_field :brand %>
+    <span style="color:red">*</span>
+    <%= f.label :category, 'Category' %>
+    <%= f.select :category, options_for_select([['Shirt', 'shirt'], ['Pants', 'pants'], ['Shoes', 'shoes']]) %>
+    <%= f.file_field :image %>
+    <button class="btn waves-effect waves-light left-align" type="submit" name="action">Submit</button>
   <% end %>
 </div>

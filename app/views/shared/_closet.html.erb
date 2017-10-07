@@ -24,7 +24,6 @@
       console.log("item-id is", item_id);
       console.log(section);
     });
-
   });
 </script>
 
@@ -39,7 +38,7 @@
                   <% shirts.each do |item| %>
                     <div class="col s12 m4 l4 clothing-type">
                         <div class="item" data-item-id="<%= item.id %>">
-                          <%= image_tag item.image.url(:small) %><br>
+                            <%= image_tag item.image.url(:small) %><br>
                           <%= link_to "edit", controller: "items", action: "edit", id: item.id %>
                         </div>
                     </div>
