@@ -11,8 +11,6 @@
  * It is generally better to create a new file per style scope.
  *
  *= require materialize.min.css
- *= require myoutfits.css
- *= require build-outfit.css
  *= require main.css
  *= require_tree .
  *= require_self

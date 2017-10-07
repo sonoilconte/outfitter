@@ -3,7 +3,6 @@
 
     $('.item').find('img').on('click', function(e){
       e.preventDefault();
-      console.log("user clicked item!");
       let item_id = $(this).closest('.item').data('item-id');
       let section = $(this).parent().parent().parent().data('section-id')
       let imgUrl = e.target.getAttribute('src');
@@ -30,7 +29,7 @@
 </script>
     <div class="row">
         <div class="clothing-type-title">
-            <p>shirts</p>
+          <p>shirts</p>
         </div>
         <div class="divider"></div>
           <div class="horizontal">
