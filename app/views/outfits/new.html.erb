@@ -4,17 +4,17 @@
     <div class="col s12 m5 sidebar">
     <%= render "shared/closet"%>
     </div>
-      <div class="col s12 m6">
-        <h1>Create an outfit</h1>
-        <%= form_for @outfit do |f| %>
-          <%= f.text_field :name, placeholder: "Name", :required => true %>
-          <%= f.text_field :tag, placeholder: "Tag" %>
-          <%= hidden_field_tag "shirt_id", nil, placeholder: "SHIRT ID" %>
-          <%= hidden_field_tag "pants_id", nil, placeholder: "PANTS ID" %>
-          <%= hidden_field_tag "shoes_id", nil, placeholder: "SHOES ID" %>
-          <%= f.submit "Create Outfit" %>
-        <% end %>
-      </div>
-      <%= render "shared/builder"%>
+    <div class="col s12 m7">
+      <h1>Create an outfit</h1>
+      <%= form_for @outfit do |f| %>
+        <%= f.text_field :name, placeholder: "Name", :required => true %>
+        <%= f.text_field :tag, placeholder: "Tag" %>
+        <%= hidden_field_tag "shirt_id", nil, placeholder: "SHIRT ID" %>
+        <%= hidden_field_tag "pants_id", nil, placeholder: "PANTS ID" %>
+        <%= hidden_field_tag "shoes_id", nil, placeholder: "SHOES ID" %>
+        <%= f.submit "Create Outfit" %>
+      <% end %>
+    </div>
+    <%= render "shared/builder"%>
   </div>
 </div>

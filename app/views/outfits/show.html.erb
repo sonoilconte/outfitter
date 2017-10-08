@@ -1,31 +1,28 @@
 <%= render "shared/header" %>
 <div class="container">
   <div class="row">
-  <h4 class="center-align"><%= @outfit.name %></h4>
-
-  <div class="col s12 center-align">
-
-    <% shirt = @outfit.items.select{ |item| item.category == "shirt"} %>
-    <% pants = @outfit.items.select{ |item| item.category == "pants"} %>
-    <% shoes = @outfit.items.select{ |item| item.category == "shoes"} %>
-
-    <div class="center-align">
-      <% if shirt[0]%>
-        <%= image_tag shirt[0].image.url(:medium) %>
-      <% end %>
+    <div class="col s12 center-align">
+      <h1><%= @outfit.name %></h1>
+      <p><span class="outfit-tag">#<%= @outfit.tag %></span></p>
+      <% shirt = @outfit.items.select{ |item| item.category == "shirt"} %>
+      <% pants = @outfit.items.select{ |item| item.category == "pants"} %>
+      <% shoes = @outfit.items.select{ |item| item.category == "shoes"} %>
+      <div>
+        <% if shirt[0]%>
+          <%= image_tag shirt[0].image.url(:medium) %>
+        <% end %>
+      </div>
+      <div>
+        <% if pants[0] %>
+          <%= image_tag pants[0].image.url(:medium) %>
+        <% end %>
+      </div>
+      <div>
+        <% if shoes[0] %>
+          <%= image_tag shoes[0].image.url(:medium) %>
+        <% end %>
+      </div>
+      <%= link_to "Edit", controller: "outfits", action: "edit", id: @outfit.id %>
     </div>
-    <div class="center-align">
-      <% if pants[0] %>
-        <%= image_tag pants[0].image.url(:medium) %>
-      <% end %>
-    </div>
-    <div class="center-align">
-      <% if shoes[0] %>
-        <%= image_tag shoes[0].image.url(:medium) %>
-      <% end %>
-    </div>
-    <strong><i class="fa fa-hashtag">Tag:</strong> <%= @outfit.tag %>
-    <%= link_to "Edit", controller: "outfits", action: "edit", id: @outfit.id %>
-  </div>
   </div>
 </div>

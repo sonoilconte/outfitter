@@ -214,9 +214,8 @@ div.horizontal {
   opacity: 0.65;
   text-decoration: none;
   letter-spacing: 0.07em;
-  line-height: 0.04em;
-  padding-top: 10px;
-  font-size: 12px;
+  /*line-height: 0.04em;*/
+  /*padding-top: 10px;*/
 }
 
 .outfit-index-board {
