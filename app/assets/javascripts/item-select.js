@@ -3,7 +3,7 @@ $(document).ready(function(){
   $('.item').find('img').on('click', function(e){
     e.preventDefault();
     let item_id = $(this).closest('.item').data('item-id');
-    let section = $(this).parent().parent().parent().data('section-id')
+    let section = $(this).closest('.item').data('section-id');
     let imgUrl = e.target.getAttribute('src');
     let imgHTML = `<img src=${imgUrl}>`;
 

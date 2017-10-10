@@ -4,10 +4,10 @@
   </div>
   <div class="divider"></div>
   <div class="horizontal">
-    <div data-section-id="shirt">
+    <div>
       <% shirts = @items.select {|item| item.category == "shirt"} %>
       <% shirts.each do |item| %>
-      <div class="item left" data-item-id="<%= item.id %>">
+      <div class="item left" data-item-id="<%= item.id %>" data-section-id="shirt">
         <%= image_tag item.image.url(:small) %>
         <%= link_to "edit", controller: "items", action: "edit", id: item.id %>
       </div>
@@ -22,10 +22,10 @@
   </div>
   <div class="divider"></div>
   <div class="horizontal">
-    <div data-section-id="pants">
+    <div>
       <% pants = @items.select {|item| item.category == "pants"} %>
       <% pants.each do |item| %>
-      <div class="item left" data-item-id="<%= item.id %>">
+      <div class="item left" data-item-id="<%= item.id %>" data-section-id="pants">
         <%= image_tag item.image.url(:small) %>
         <%= link_to "edit", controller: "items", action: "edit", id: item.id %>
       </div>
@@ -40,10 +40,10 @@
   </div>
   <div class="divider"></div>
   <div class="horizontal">
-    <div data-section-id="shoes">
+    <div>
       <% shoes = @items.select{|item| item.category == "shoes"}%>
       <% shoes.each do |item| %>
-      <div class="item left" data-item-id="<%= item.id %>">
+      <div class="item left" data-item-id="<%= item.id %>" data-section-id="shoes">
         <%= image_tag item.image.url(:small) %>
         <%= link_to "edit", controller: "items", action: "edit", id: item.id %>
       </div>
