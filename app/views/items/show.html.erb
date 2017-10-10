@@ -7,6 +7,7 @@
         <li><strong>Brand:</strong> <%= @item.brand %></li>
         <li><strong>Category:</strong> <%= @item.category %></li>
       </ul>
+      <%= link_to "Edit", controller: "items", action: "edit", id: @item.id %>
     </div>
     <div class="col m6">
       <%= image_tag @item.image.url(:large) %>
