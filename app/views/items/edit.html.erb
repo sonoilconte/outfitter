@@ -9,14 +9,19 @@
       <label> Brand </label>
       <%= f.text_field :brand, value: @item.brand, placeholder: "Enter new Brand" %>
       <label> Category </label>
-      <%= f.text_field :category, value: @item.category, placeholder: "Enter new Category" %>
-      <%= f.file_field :image %>
-      <%= f.submit "Update Item" %>
+      <%= f.select :category, options_for_select([['Shirt', 'shirt'], ['Pants', 'pants'], ['Shoes', 'shoes']], @item.category) %>
+      <label class="btn waves-effect waves-light">
+        Choose an image
+        <span style="display: none">
+          <%= f.file_field :image %>
+        </span>
+      </label>
+      <%= f.submit "Update Item", class: "btn waves-effect waves-light" %>
     </div>
     <div class="col m6">
       <%= image_tag @item.image.url(:large) %>
     </div>
   </div>
   <% end %>
-  <%= button_to "Delete Item", { action: "destroy", id: @item.id }, method: :delete %>
+  <%= button_to "Delete Item", { action: "destroy", id: @item.id }, method: :delete, class: "btn waves-effect waves-light" %>
 </div>

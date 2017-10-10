@@ -2,6 +2,7 @@ $(document).ready(function(){
 
   $('.item').find('img').on('click', function(e){
     e.preventDefault();
+    $('#board-advice').html("");
     let item_id = $(this).closest('.item').data('item-id');
     let section = $(this).closest('.item').data('section-id');
     let imgUrl = e.target.getAttribute('src');

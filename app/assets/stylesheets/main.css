@@ -92,7 +92,7 @@ h1 {
   font-weight: 900;
   font-variant: small-caps;
   font-size: 20px;
-  padding: 20px 0 10px 0;
+  padding: 0 0 10px 0;
 }
 
 .table {
@@ -127,7 +127,7 @@ div.horizontal {
 
 .build-box {
   border: 2px dashed #ccc;
-  margin-top: 30px;
+  margin-top: 10px;
   height: 100%;
 }
 
@@ -153,6 +153,14 @@ div.horizontal {
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
 }
+
+/*.delete {
+  background-color: #EB5F6B;
+}
+
+.delete:hover {
+  background-color: #F21C30;
+}*/
 
 .create-board img {
   width: 50%;
@@ -185,6 +193,9 @@ div.horizontal {
   font-size: 250%;
 }
 
+.form-horizontal {
+  margin-top: 30px;
+}
 /* my outfits index */
 .outfit-index-title {
   font-family: "Libre Baskerville", serif;
