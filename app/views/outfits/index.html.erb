@@ -6,13 +6,11 @@
   <% outfits = @outfits.sort{ |first, last| last.updated_at <=> first.updated_at} %>
   <% outfits.each do |outfit| %>
     <div class="col s12 m4 outfit-index-board">
-      <div class="center-align">
-        <span class="outfit-name">
-          <%= link_to outfit.name, controller: "outfits", action: "show", id: outfit.id %>
-        </span>
+      <div class="center-align outfit-name">
+        <%= link_to outfit.name, controller: "outfits", action: "show", id: outfit.id %>
       </div>
-      <div class="center-align">
-        <p><span class="outfit-tag">#<%= outfit.tag %></span></p>
+      <div class="center-align outfit-tag">
+        #<%= outfit.tag %>
       </div>
       <%= link_to outfit, controller: "outfits", action: "show", id: outfit.id do %>
         <% shirt = outfit.items.select{ |item| item.category == "shirt" }  %>

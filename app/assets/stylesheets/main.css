@@ -210,8 +210,8 @@ div.horizontal {
   font-variant: small-caps;
   letter-spacing: 0.07em;
   line-height: 0.04em;
-  padding-top: 10px;
-  font-size: 22px;
+  padding: 10px 0 10px 0;
+  font-size: 20px;
 }
 
 .outfit-tag {
@@ -219,23 +219,16 @@ div.horizontal {
   opacity: 0.65;
   text-decoration: none;
   letter-spacing: 0.07em;
+  padding: 0 0 10px 0;
   /*line-height: 0.04em;*/
   /*padding-top: 10px;*/
 }
 
 .outfit-index-board {
-  height: 540px;
+  height: 500px;
   margin-top: 20px;
 }
 
 select {
   display: block;
-}
-
-.outfit-name {
-  font-variant: small-caps;
-  letter-spacing: 0.061em;
-  line-height: 0.03em;
-  padding-top: 10px;
-  font-size: 16px;
 }
