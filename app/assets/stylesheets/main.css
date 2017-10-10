@@ -92,10 +92,7 @@ h1 {
   font-weight: 900;
   font-variant: small-caps;
   font-size: 20px;
-}
-
-.clothing-type {
-  width: auto !important;
+  padding: 20px 0 10px 0;
 }
 
 .table {
