@@ -133,9 +133,6 @@ div.horizontal {
 
 .btn {
   overflow: hidden;
-}
-
-.btn {
   -webkit-box-shadow: 0px 1px 3px #666666;
   -moz-box-shadow: 0px 1px 3px #666666;
   box-shadow: 0px 1px 3px #666666;

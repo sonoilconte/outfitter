@@ -10,7 +10,12 @@
     <span style="color:red">*</span>
     <%= f.label :category, 'Category' %>
     <%= f.select :category, options_for_select([['Shirt', 'shirt'], ['Pants', 'pants'], ['Shoes', 'shoes']]) %>
-    <%= f.file_field :image %>
+    <label class="btn waves-effect waves-light">
+      Choose an image
+      <span style="display: none">
+        <%= f.file_field :image %>
+      </span>
+    </label>
     <button class="btn waves-effect waves-light left-align" type="submit" name="action">Submit</button>
   <% end %>
 </div>

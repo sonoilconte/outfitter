@@ -1,12 +1,12 @@
 <%= render "shared/header" %>
 <div class="container">
-  <h1 class="center-align">Edit your outfit</h1>
+  <h1>Edit your outfit</h1>
   <%= form_for @outfit do |f| %>
     <%= f.label :name, "Change name" %>
     <%= f.text_field :name, value: @outfit.name, placeholder: "edit outfit name" %>
     <%= f.label :tag, "Change tag" %>
     <%= f.text_field :tag, value: @outfit.tag, placeholder: "update current tag" %>
-    <%= f.submit "Update Outfit" %>
+    <%= f.submit "Update Outfit", class: "btn waves-effect waves-light" %>
   <% end %>
-  <%= button_to "Delete Outfit", { action: "destroy", id: @outfit.id }, method: "delete", form_class: "right-align" %>
+  <%= button_to "Delete Outfit", { action: "destroy", id: @outfit.id }, method: "delete", form_class: "right btn waves-effect waves-light" %>
 </div>
