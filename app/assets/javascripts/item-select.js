@@ -3,10 +3,11 @@ $(document).ready(function(){
   $('.item').find('img').on('click', function(e){
     e.preventDefault();
     $('#board-advice').html("");
-    let item_id = $(this).closest('.item').data('item-id');
-    let section = $(this).closest('.item').data('section-id');
-    let imgUrl = e.target.getAttribute('src');
-    let imgHTML = `<img src=${imgUrl}>`;
+    var item_id = $(this).closest('.item').data('item-id');
+    var section = $(this).closest('.item').data('section-id');
+    // take the url of the clicked image, but swap in the large high res image
+    var imgUrl = e.target.getAttribute('src').replace(/small/, "large");
+    var imgHTML = `<img src=${imgUrl}>`;
 
     if(section === "shirt"){
       $('input[name=shirt_id]').val(item_id);
@@ -24,4 +25,5 @@ $(document).ready(function(){
     console.log("item-id is", item_id);
     console.log(section);
   });
+
 });
