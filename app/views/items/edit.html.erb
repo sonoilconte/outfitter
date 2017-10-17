@@ -13,12 +13,12 @@
       <label class="btn waves-effect waves-light">
         Choose an image
         <span style="display: none">
-          <%= f.file_field :image %>
+          <%= f.file_field :image, class: "image-input"  %>
         </span>
       </label>
       <%= f.submit "Update Item", class: "btn waves-effect waves-light" %>
     </div>
-    <div class="col m6">
+    <div class="col m6 image-preview">
       <%= image_tag @item.image.url(:large) %>
     </div>
   </div>

@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 Item.delete_all
 Outfit.delete_all
 
@@ -17,8 +9,8 @@ Outfit.create([
 
 casual_friday_items = Item.create([
   {name: 'favorite grey button-down', brand: 'Louis Vutton', category: 'shirt', image: File.new("app/assets/images/shirt_grey.jpg")},
-  {name: 'dark blue jeans', brand: 'seven', category: 'pants', image: File.new("app/assets/images/pants_dark_jeans.png")},
-  {name: 'black boots', brand: 'Aldo', category: 'shoes', image: File.new("app/assets/images/shoes_black_boots.png")}
+  {name: 'dark blue jeans', brand: 'seven', category: 'pants', image: File.new("app/assets/images/pants_dark_jeans.jpg")},
+  {name: 'black boots', brand: 'Aldo', category: 'shoes', image: File.new("app/assets/images/shoes_black_boots.jpg")}
 ])
 
 serious_business_items = Item.create([
@@ -48,9 +40,8 @@ weekend.each do |item|
   outfit.items << item
 end
 
-
-# User.create({first_name: 'John', last_name: 'Smith', password_digest: '1', username: 'johnsmithuser', email: 'johnsmithuser@gmail.com' })
-
-# p User.all
 p Item.all
 p Outfit.all
+
+# User.create({first_name: 'John', last_name: 'Smith', password_digest: '1', username: 'johnsmithuser', email: 'johnsmithuser@gmail.com' })
+# p User.all

@@ -17,13 +17,10 @@ $(document).ready(function(){
       $('input[name=pants_id]').val(item_id);
       $('#pants-target').html(imgHTML);
     }
-    else {
+    else if (section === "shoes") {
       $('input[name=shoes_id]').val(item_id);
       $('#shoes-target').html(imgHTML);
     }
-    console.log(imgUrl);
-    console.log("item-id is", item_id);
-    console.log(section);
   });
 
 });
