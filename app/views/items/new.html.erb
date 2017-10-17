@@ -12,13 +12,17 @@
       <span style="color:red">*</span>
       <%= f.label :category, 'Category' %>
       <%= f.select :category, options_for_select([['Shirt', 'shirt'], ['Pants', 'pants'], ['Shoes', 'shoes']]) %>
-      <label class="btn waves-effect waves-light">
-        Choose an image
-        <span style="display: none">
-          <%= f.file_field :image, class: "image-input" %>
-        </span>
-      </label>
-      <button class="btn waves-effect waves-light left-align" type="submit" name="action">Submit</button>
+      <div class="btn-layout">
+        <label class="btn waves-effect waves-light">
+          Choose an image
+          <span style="display: none">
+            <%= f.file_field :image, class: "image-input" %>
+          </span>
+        </label>
+      </div>
+      <div class="btn-layout">
+        <button class="btn waves-effect waves-light left-align" type="submit" name="action">Submit</button>
+      </div>
       <% end %>
     </div>
     <div class="col m6 large-display image-preview">

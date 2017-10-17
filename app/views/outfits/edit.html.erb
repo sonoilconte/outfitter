@@ -8,5 +8,5 @@
     <%= f.text_field :tag, value: @outfit.tag, placeholder: "update current tag" %>
     <%= f.submit "Update Outfit", class: "btn waves-effect waves-light" %>
   <% end %>
-  <%= button_to "Delete Outfit", { action: "destroy", id: @outfit.id }, method: "delete", form_class: "right btn waves-effect waves-light" %>
+  <%= button_to "Delete Outfit", { action: "destroy", id: @outfit.id }, method: "delete", form_class: "btn btn-delete waves-effect waves-light" %>
 </div>

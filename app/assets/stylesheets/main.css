@@ -154,6 +154,19 @@ div.horizontal {
   text-decoration: none;
 }
 
+.btn-layout {
+  margin-top: 20px;
+}
+
+.btn-delete {
+  margin: 50px 0 20px 0;
+  background: #666666;
+}
+
+.btn-delete:hover {
+  background: red;
+}
+
 /*.delete {
   background-color: #EB5F6B;
 }
