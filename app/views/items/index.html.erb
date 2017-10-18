@@ -1,16 +1,72 @@
 <%= render "shared/header" %>
-<!-- main container -->
 <div class="container">
-  <div class="row main">
-
-    <div class="col s12 m12 sidebar">
-      <div class="closet center-align">My closet</div>
-      <p class="advice center-align">Add individual items to your closet. Use your items when putting new outfits together</p>
+  <div class="row">
+    <div class="col s12">
+      <h1 class="center-align">Closet</h1>
+      <p class="advice advice-space center-align">Add individual items to your closet. You'll use items when putting new outfits together.</p>
       <div class="center-align">
-      <a href="https://outfitters1.herokuapp.com/items/new" class="btn-floating fab btn-xs waves-effect waves-light right-align blue"><i class="material-icons">add</i></a>
+        <a href="/items/new" class="btn-floating fab btn-xs waves-effect waves-light right-align blue"><i class="material-icons">add</i></a>
       </div>
-      <%= render "shared/closet" %>
+      <!-- Below code is similar to the _closet partial. Not using the closet partial here
+          because there is no click to add to outfit on this items index page. Instead, the desired
+          functionality here is to click an item which will take the user to the show one item page. -->
+      <div class="row">
+        <div class="clothing-type-title">
+          shirts
+        </div>
+        <div class="divider"></div>
+        <div class="horizontal">
+          <div>
+            <% shirts = @items.select {|item| item.category == "shirt"} %>
+            <% shirts.each do |item| %>
+            <div class="left">
+              <%= link_to item, controller: "items", action: "show", id: item.id do %>
+                <%= image_tag item.image.url(:small) %>
+              <% end %>
+            </div>
+            <% end %>
+          </div>
+        </div>
       </div>
 
+      <div class="row">
+        <div class="clothing-type-title">
+          pants
+        </div>
+        <div class="divider"></div>
+        <div class="horizontal">
+          <div>
+            <% pants = @items.select {|item| item.category == "pants"} %>
+            <% pants.each do |item| %>
+            <div class="left">
+              <%= link_to item, controller: "items", action: "show", id: item.id do %>
+                <%= image_tag item.image.url(:small) %>
+              <% end %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="clothing-type-title">
+          shoes
+        </div>
+        <div class="divider"></div>
+        <div class="horizontal">
+          <div>
+            <% shoes = @items.select{|item| item.category == "shoes"}%>
+            <% shoes.each do |item| %>
+            <div class="left">
+              <%= link_to item, controller: "items", action: "show", id: item.id do %>
+                <%= image_tag item.image.url(:small) %>
+              <% end %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>

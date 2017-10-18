@@ -11,4 +11,6 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require item-select
+//= require image-preview
 //= require_tree .

@@ -9,7 +9,6 @@ class OutfitsController < ApplicationController
   end
 
   def create
-    p "HELLO OUTFIT CREATE"
     p "NAME: #{outfit_params[:name]}"
     p "ITEM_ID: #{params[:item_id]}"
 

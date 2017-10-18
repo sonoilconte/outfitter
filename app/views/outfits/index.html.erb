@@ -1,32 +1,38 @@
 <%= render "shared/header" %>
 <div class="container">
+  <h1>Outfits</h1>
+  <p class="advice">See what outfits you&#x27;ve already created and plan your outfits for the week</p>
   <div class="row">
-      <div class="closet center-align">My outfits </div>
-      <p class="advice center-align">You can use this page to see what you&#x27;
-        ve already created and plan your outfits for the week</p>
-      <% @outfits.each do |outfit| %>
-            <div class="row">
-              <div class="col s12 m4 center-align">
-                    <p>
-
-                    <span class="outfit-name">
-                      <%= link_to outfit.name, controller: "outfits", action: "show", id: outfit.id %>
-                    </span><br>
-                      <span class="outfit-tag"># <%= outfit.tag %></span><br>
-                      <div>
-                        <%= link_to(@outfit, controller: "outfits", action: "show", id: outfit.id) do %>
-                        <% outfit.items.each do |item| %>
-
-                        <%= image_tag item.image.url(:small) %><br>
-                        <% end %>
-
-                        </div>
-                        <% end %>
-
-                        <%= link_to "Edit", controller: "outfits", action: "edit", id: outfit.id %><br>
-                    </p>
-              </div>
-            <% end %>
-          </div>
+  <% outfits = @outfits.sort{ |first, last| last.updated_at <=> first.updated_at} %>
+  <% outfits.each do |outfit| %>
+    <div class="col s12 m4 outfit-index-board">
+      <div class="center-align outfit-name">
+        <%= link_to outfit.name, controller: "outfits", action: "show", id: outfit.id %>
+      </div>
+      <div class="center-align outfit-tag">
+        #<%= outfit.tag %>
+      </div>
+      <%= link_to outfit, controller: "outfits", action: "show", id: outfit.id do %>
+        <% shirt = outfit.items.select{ |item| item.category == "shirt" }  %>
+        <% pants = outfit.items.select{ |item| item.category == "pants" }  %>
+        <% shoes = outfit.items.select{ |item| item.category == "shoes" }  %>
+        <div class="center-align">
+          <% if shirt[0] %>
+            <%= image_tag shirt[0].image.url(:small) %>
+          <% end %>
         </div>
+        <div class="center-align">
+          <% if pants[0] %>
+            <%= image_tag pants[0].image.url(:small) %>
+          <% end %>
+        </div>
+        <div class="center-align">
+          <% if shoes[0] %>
+            <%= image_tag shoes[0].image.url(:small) %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  </div>
 </div>

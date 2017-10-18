@@ -1,90 +1,50 @@
-<script type="text/javascript">
-  $(document).ready(function(){
-
-    $('.item').find('img').on('click', function(e){
-      e.preventDefault();
-      console.log("user clicked item!");
-      let item_id = $(this).closest('.item').data('item-id');
-      let section = $(this).parent().parent().parent().data('section-id')
-      let imgUrl = e.target.getAttribute('src');
-      let imgHTML = `<img src=${imgUrl}>`;
-
-      if(section === "shirt"){
-        $('input[name=shirt_id]').val(item_id);
-        $('#shirt-target').html(imgHTML);
-      }
-      else if (section === "pants") {
-        $('input[name=pants_id]').val(item_id);
-        $('#pants-target').html(imgHTML);
-      }
-      else {
-        $('input[name=shoes_id]').val(item_id);
-        $('#shoes-target').html(imgHTML);
-      }
-      console.log(imgUrl)
-      console.log("item-id is", item_id);
-      console.log(section)
-    });
-
-  });
-</script>
-    <div class="row">
-        <div class="clothing-type-title">
-            <p>shirts</p>
-        </div>
-        <div class="divider"></div>
-          <div class="horizontal">
-              <div class="clothing-type" data-section-id="shirt">
-
-                <% shirts = @items.select {|item| item.category == "shirt"} %>
-                  <% shirts.each do |item| %>
-                    <div class="col s12 m4 l4 clothing-type">
-                        <div class="item" data-item-id="<%= item.id %>">
-                          <%= image_tag item.image.url(:small) %><br>
-                          <%= link_to "edit", controller: "items", action: "edit", id: item.id %>
-                        </div>
-                    </div>
-                  <% end %>
-              </div>
-          </div>
-        </div>
-    <div class="row">
-        <div class="clothing-type-title">
-            <p>pants</p>
-        </div>
-        <div class="divider"></div>
-        <div class="horizontal">
-            <div class="clothing-type" data-section-id="pants">
-
-              <% pants = @items.select {|item| item.category == "pants"} %>
-              <% pants.each do |item| %>
-              <div class="col s12 m4 l4 clothing-type">
-                  <div class="item" data-item-id="<%= item.id %>">
-                    <%= image_tag item.image.url(:small) %><br>
-                    <%= link_to "edit", controller: "items", action: "edit", id: item.id %>
-                  </div>
-              </div>
-              <% end %>
-            </div>
-        </div>
+<div class="row">
+  <div class="clothing-type-title">
+    shirts
+  </div>
+  <div class="divider"></div>
+  <div class="horizontal">
+    <div>
+      <% shirts = @items.select {|item| item.category == "shirt"} %>
+      <% shirts.each do |item| %>
+      <div class="item left" data-item-id="<%= item.id %>" data-section-id="shirt">
+        <%= image_tag item.image.url(:small) %>
+      </div>
+      <% end %>
     </div>
-    <div class="row">
-        <div class="clothing-type-title">
-            <p>shoes</p>
-        </div>
-        <div class="divider"></div>
-        <div class="horizontal">
-            <div class="clothing-type" data-section-id="shoes">
+  </div>
+</div>
 
-              <% shoes = @items.select{|item| item.category == "shoes"}%>
-              <% shoes.each do |item| %>
-              <div class="col s12 m4 l4 clothing-type">
-                <div class="item" data-item-id="<%= item.id %>">
-                  <%= image_tag item.image.url(:small) %><br>
-                  <%= link_to "edit", controller: "items", action: "edit", id: item.id %>
-                </div>
-              </div>
-              <% end %>
-            </div>
-        </div>
+<div class="row">
+  <div class="clothing-type-title">
+    pants
+  </div>
+  <div class="divider"></div>
+  <div class="horizontal">
+    <div>
+      <% pants = @items.select {|item| item.category == "pants"} %>
+      <% pants.each do |item| %>
+      <div class="item left" data-item-id="<%= item.id %>" data-section-id="pants">
+        <%= image_tag item.image.url(:small) %>
+      </div>
+      <% end %>
     </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="clothing-type-title">
+    shoes
+  </div>
+  <div class="divider"></div>
+  <div class="horizontal">
+    <div>
+      <% shoes = @items.select{|item| item.category == "shoes"}%>
+      <% shoes.each do |item| %>
+      <div class="item left" data-item-id="<%= item.id %>" data-section-id="shoes">
+        <%= image_tag item.image.url(:small) %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

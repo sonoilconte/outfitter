@@ -1,23 +1,12 @@
 <%= render "shared/header" %>
 <div class="container">
-  <div class="row">
-        <h4 class="center-align">Edit your outfit</h4>
-        <%= form_for @outfit do |f| %>
-          <ul>
-            <li><%= f.label :name, 'Need a new name?'%></li>
-            <li><%= f.text_field :name, value: @outfit.name, placeholder: "edit outfit name" %></li>
-
-            <li><%= f.label :tag, 'Change current tag'%></li>
-            <li><%= f.text_field :tag, value: @outfit.tag, placeholder: "update current tag" %></li>
-            <div class="row center-align">
-              <div class="col s12 m6 l6">
-                 <%= button_to "Delete Outfit", { action: "destroy", id: @outfit.id }, method: "delete" %>
-              </div>
-              <div class="col s12 m6 l6">
-                  <%= f.submit "Update Outfit" %>
-              </div>
-            </div>        
-          </ul>
-        <% end %>
-  </div>
+  <h1>Edit your outfit</h1>
+  <%= form_for @outfit do |f| %>
+    <%= f.label :name, "Change name" %>
+    <%= f.text_field :name, value: @outfit.name, placeholder: "edit outfit name" %>
+    <%= f.label :tag, "Change tag" %>
+    <%= f.text_field :tag, value: @outfit.tag, placeholder: "update current tag" %>
+    <%= f.submit "Update Outfit", class: "btn waves-effect waves-light" %>
+  <% end %>
+  <%= button_to "Delete Outfit", { action: "destroy", id: @outfit.id }, method: "delete", form_class: "btn btn-delete waves-effect waves-light" %>
 </div>

@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Outfitter</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Outfitter</title>
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://cdn4.iconfinder.com/data/icons/clothicons/512/012-Suit-512.png">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- Google Font Import -->
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Poppins" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' 'carousel' %>
-
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <!-- Rails Asset Pipeline CSS -->
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!-- Rails Asset Pipeline JavaScript -->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' 'carousel' %>
   </head>
 
   <body>
-
     <%= yield %>
-
   </body>
+
 </html>

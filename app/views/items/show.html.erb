@@ -1,9 +1,16 @@
 <%= render "shared/header" %>
-<h2>Item <%= @item.name %> </h2>
-<p>
-  <strong>Name:</strong> <%= @item.name %>
-  <strong>Brand:</strong> <%= @item.brand %><br>
-  <strong>Category:</strong> <%= @item.category %>
-  <%= image_tag @item.image.url(:large) %>
-
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col m6">
+      <h1><%= @item.name %></h1>
+      <ul>
+        <li><strong>Brand:</strong> <%= @item.brand %></li>
+        <li><strong>Category:</strong> <%= @item.category %></li>
+      </ul>
+      <%= link_to "Edit", controller: "items", action: "edit", id: @item.id %>
+    </div>
+    <div class="col m6 large-display">
+      <%= image_tag @item.image.url(:large) %>
+    </div>
+  </div>
+</div>
