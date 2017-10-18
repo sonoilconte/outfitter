@@ -1,9 +1,11 @@
+/* SITE-WIDE STYLES*/
+
 body {
   font-family: "Libre Baskerville", serif;
   font-size: 14px;
+  font-weight: 300;
   letter-spacing: 0em;
   line-height: 2em;
-  font-weight: 300;
   padding: 0;
   margin: 0;
 }
@@ -15,58 +17,6 @@ h1 {
   margin: .75em 0 .25em 0;
 }
 
-/* LANDING PAGE start */
-.background {
-  background-image: url("https://i.imgur.com/9TSH4QN.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  text-align: center;
-  padding-top: 100px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.landing-page-item {
-  align-content: center;
-  line-height: 25px;
-}
-
-.brand-logo-landing {
-  font-family: "Libre Baskerville", serif;
-  font-size: 36px;
-  line-height: 110%;
-  text-transform: none;
-  font-weight: 900;
-  margin-top: -80px;
-}
-
-/* MY CLOSET */
-.brand-logo {
-  color: #ffffff;
-  text-shadow: 4px 4px 6px #000000;
-  margin-left: 10px;
-  letter-spacing: 0.03em;
-  font-weight: 400;
-  font-family: "Crimson Text", serif;
-}
-
-.nav {
-  margin-right: 20px;
-}
-
-.nav-wrapper {
-  background-color: #212121;
-}
-
-.nav ul {
-  font-size: 20px;
-  font-weight: 400;
-}
-
-/* closet view start */
-
 .advice {
   font-size: 14px;
   font-weight: 300;
@@ -74,61 +24,6 @@ h1 {
   color: rgba(0, 0, 0, 0.5);
   margin: 1em 0 0 0;
   padding: 0;
-}
-
-.divider {
-  margin-bottom: 1.091em;
-}
-
-.title {
-  font-size: 14px;
-  color: black;
-  letter-spacing: 0.1em;
-}
-
-.clothing-type-title {
-  letter-spacing: 0.081em;
-  line-height: 100%;
-  font-weight: 900;
-  font-variant: small-caps;
-  font-size: 20px;
-  padding: 0 0 10px 0;
-}
-
-.table {
-  display: table;
-}
-
-div.horizontal {
-  width: 100%;
-  height: 20vh;
-  overflow: auto;
-}
-
-.row {
-  margin-bottom: 1px;
-}
-
-.clothing-item {
-  margin: 10px;
-}
-.card.small {
-  height: auto !important;
-  margin: 0.1em;
-}
-
-.card.small .card-image {
-  max-width: 10vh;
-}
-
-.builder {
-  max-height: 100vh;
-}
-
-.build-box {
-  border: 2px dashed #ccc;
-  margin-top: 10px;
-  height: 100%;
 }
 
 .btn {
@@ -139,9 +34,7 @@ div.horizontal {
   color: #ffffff;
   font-size: 12px;
   background: #3cb0fd;
-  float: none; /* disable the float */
-  display: inline-block; /* make blocks inline-block */
-  text-align: initial; /* restore text-align to default */
+  display: inline-block;
 }
 
 .btn:hover {
@@ -167,58 +60,120 @@ div.horizontal {
   background: red;
 }
 
-/*.delete {
-  background-color: #EB5F6B;
+select {
+  display: block;
 }
 
-.delete:hover {
-  background-color: #F21C30;
-}*/
+.large-display img {
+  max-width: 100%;
+  margin: 30px 0 0 0;
+}
 
-.create-board img {
+/* NAV */
+
+.brand-logo {
+  color: #ffffff;
+  text-shadow: 4px 4px 6px #000000;
+  margin-left: 10px;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+}
+
+.nav {
+  margin-right: 20px;
+}
+
+.nav-wrapper {
+  background-color: #212121;
+}
+
+.nav ul {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* LANDING PAGE */
+.background {
+  background-image: url("https://i.imgur.com/9TSH4QN.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  text-align: center;
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.landing-page-item {
+  align-content: center;
+  line-height: 25px;
+}
+
+.brand-logo-landing {
+  font-size: 36px;
+  line-height: 110%;
+  text-transform: none;
+  font-weight: 900;
+  margin-top: -80px;
+}
+
+/* CLOSET PAGE */
+
+.divider {
+  margin-bottom: 1.091em;
+}
+
+.title {
+  font-size: 14px;
+  color: black;
+  letter-spacing: 0.1em;
+}
+
+.clothing-type-title {
+  letter-spacing: 0.081em;
+  line-height: 100%;
+  font-weight: 900;
+  font-variant: small-caps;
+  font-size: 20px;
+  padding: 0 0 10px 0;
+}
+
+.horizontal {
+  width: 100%;
+  height: 20vh;
+  overflow: auto;
+}
+
+.clothing-item {
+  margin: 10px;
+}
+
+/* NEW OUTFIT PAGE */
+
+.build-box {
+  border: 2px dashed #ccc;
+  margin-top: 10px;
+  height: 100%;
+}
+
+.build-section img {
   width: 50%;
-}
-
-.img1 {
-  margin-bottom: 30px;
-}
-.placeholder {
-  min-width: 25vh;
-  max-height: 25%;
-}
-
-.form-padding {
-  padding: 2% 1% 0% 0%;
-}
-
-.form-title {
-  font-family: "Libre Baskerville", serif;
-  padding: 10px 10px 10px 0px;
-  letter-spacing: 0.03em;
-  line-height: 200%;
-}
-
-.form-title-edit {
-  font-family: "Libre Baskerville", serif;
-  padding: 10px 10px 10px 10px;
-  letter-spacing: 0.03em;
-  line-height: 200%;
-  font-size: 250%;
 }
 
 .form-horizontal {
   margin-top: 30px;
 }
-/* my outfits index */
+
+/* OUTFITS INDEX PAGE */
+
 .outfit-index-title {
-  font-family: "Libre Baskerville", serif;
   letter-spacing: 0.03em;
   line-height: 200%;
   font-size: 250%;
 }
 
 .outfit-name {
-  font-family: "Libre Baskerville", serif;
   text-decoration: none;
   font-variant: small-caps;
   letter-spacing: 0.07em;
@@ -228,25 +183,13 @@ div.horizontal {
 }
 
 .outfit-tag {
-  font-family: "Libre Baskerville", serif;
   opacity: 0.65;
   text-decoration: none;
   letter-spacing: 0.07em;
   padding: 0 0 5px 0;
-  /*line-height: 0.04em;*/
-  /*padding-top: 10px;*/
 }
 
 .outfit-index-board {
   height: 500px;
   margin-top: 40px;
-}
-
-select {
-  display: block;
-}
-
-.large-display img {
-  max-width: 100%;
-  margin: 30px 0 0 0;
 }
