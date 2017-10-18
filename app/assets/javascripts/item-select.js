@@ -7,7 +7,7 @@ $(document).ready(function(){
     var section = $(this).closest('.item').data('section-id');
     // take the url of the clicked image, but swap in the large high res image
     var imgUrl = e.target.getAttribute('src').replace(/small/, "large");
-    var imgHTML = `<img src=${imgUrl}>`;
+    var imgHTML = "<img src=" + imgUrl + ">";
 
     if(section === "shirt"){
       $('input[name=shirt_id]').val(item_id);
