@@ -9,15 +9,15 @@ $(document).ready(function(){
     var imgUrl = e.target.getAttribute('src').replace(/small/, "large");
     var imgHTML = "<img src=" + imgUrl + ">";
 
-    if(section === "shirt"){
+    if (section === "shirt"){
       $('input[name=shirt_id]').val(item_id);
       $('#shirt-target').html(imgHTML);
     }
-    else if (section === "pants") {
+    if (section === "pants") {
       $('input[name=pants_id]').val(item_id);
       $('#pants-target').html(imgHTML);
     }
-    else if (section === "shoes") {
+    if (section === "shoes") {
       $('input[name=shoes_id]').val(item_id);
       $('#shoes-target').html(imgHTML);
     }
