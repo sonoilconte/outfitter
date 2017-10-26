@@ -1,7 +1,7 @@
 # Outfitter #
 
 Live at <a>https://outfitter-dev.herokuapp.com/</a>
-![Create Outfit Screenshot]()
+![Create Outfit Screenshot](https://github.com/sonoilconte/outfitter/blob/master/app/assets/images/gh_readme_ss.png?raw=true)
 
 ## Overview ##
 Outfitter is an app for creating a digital closet and combining clothing items into outfits.
