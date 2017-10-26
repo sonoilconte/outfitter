@@ -4,29 +4,32 @@ Check it out on heroku:
 <a>https://outfitter-dev.herokuapp.com/</a>
 
 ## Overview ##
-With Outfitter, users can create a digital closet and combine clothing items into outfits.
+Outfitter is an app for creating a digital closet and combining clothing items into outfits.
 
+User Stories Implemented
 
-User Stories
-  1. User can view all outfits on page
-  2. User can view all items
-  3. User can create a new outfit from items
-  4. User can edit and delete outfits
+  ..* Add a new clothing item
+  ..* View an index of all outfits
+  ..* View an index of all clothing items (the "Closet")
+  ..* View / Edit / Delete a clothing item
+  ..* Create a new outfit from items
+  ..* View / Delete an outfit
+  ..* Edit name and tag attributes for an outfit
 
-
-Technologies used
+Technologies
   1. Ruby on Rails
   2. Javascript
   3. Jquery
   4. Materialize CSS
 
+To Do
+  ..* Users and sessions
+  ..* User can edit an outfit swapping in different items, similar to creating an outfit
+  ..* View showing outfits from multiple users
+  ..* Many to many relationship between users and outfits. E.g. a user can save another user's outfit to their account.
 
-Wish list
-  1. User can scale clothes on create outfit page
-  2. Create different users and sessions
-  3. View different users outfits and save them to own outfit
 
-Setup
+Local Setup
   1. Clone and cd into repository
   2. Run `bundle install`
   3. Run `rails s`
