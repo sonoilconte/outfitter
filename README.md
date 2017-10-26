@@ -1,7 +1,7 @@
 # Outfitter #
 
-Check it out on heroku:
-<a>https://outfitter-dev.herokuapp.com/</a>
+Live at <a>https://outfitter-dev.herokuapp.com/</a>
+![Create Outfit Screenshot]()
 
 ## Overview ##
 Outfitter is an app for creating a digital closet and combining clothing items into outfits.
@@ -9,10 +9,10 @@ Outfitter is an app for creating a digital closet and combining clothing items i
 ## User Stories Implemented ##
 
   * Add a new clothing item
-  * View an index of all outfits
   * View an index of all clothing items (the "Closet")
+  * View an index of all outfits
   * View / Edit / Delete a clothing item
-  * Create a new outfit from items
+  * Create a new outfit from clothing items
   * View / Delete an outfit
   * Edit name and tag attributes for an outfit
 
