@@ -54,13 +54,15 @@ h1 {
   margin-top: 20px;
 }
 
+/* Materialize CSS is doing some strange things with button styles which is why using !important to override here*/
+
 .btn-delete {
   margin: 50px 0 20px 0;
-  background: #666666;
+  background: #666666 !important;
 }
 
 .btn-delete:hover {
-  background: red;
+  background: red !important;
 }
 
 select {
