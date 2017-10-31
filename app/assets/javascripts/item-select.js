@@ -9,8 +9,7 @@ $(document).ready(function(){
       var $item = $(this).closest(".item");
       var itemId = $item.data("item-id");
       var section = $item.data("section-id");
-
-      var imgUrl = e.target.getAttribute("src").replace(/small/, "large");
+      var imgUrl = $item.data("large-img");
 
       var imgNode = document.createElement("img");
       imgNode.src = imgUrl;
@@ -18,36 +17,21 @@ $(document).ready(function(){
       var sectionMap = {
         shirt: {
           imgContainerId: "shirt-target",
-          inputName: "shirtId"
+          inputName: "shirt_id"
         },
         pants: {
           imgContainerId: "pants-target",
-          inputName: "pantsId"
+          inputName: "pants_id"
         },
         shoes: {
           imgContainerId: "shoes-target",
-          inputName: "shoesId"
+          inputName: "shoes_id"
         }
       };
 
       var sectionIds = sectionMap[section];
-
       $("input[name=" + sectionIds.inputName + "]").val(itemId);
-      console.log("#" + sectionIds.imgContainerId);
       $("#" + sectionIds.imgContainerId).empty().append(imgNode);
-
-      // if (sectionId === "shirt"){
-      //   $("input[name=shirt_id]").val(itemId);
-      //   $("#shirt-target").html(imgHTML);
-      // }
-      // if (sectionId === "pants") {
-      //   $('input[name=pants_id]').val(itemId);
-      //   $('#pants-target').html(imgHTML);
-      // }
-      // if (sectionId === "shoes") {
-      //   $('input[name=shoes_id]').val(itemId);
-      //   $('#shoes-target').html(imgHTML);
-      // }
   });
 
 });
