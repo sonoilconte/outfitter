@@ -1,26 +1,53 @@
 $(document).ready(function(){
 
-  $('.item').find('img').on('click', function(e){
-    e.preventDefault();
-    $('#board-advice').html("");
-    var item_id = $(this).closest('.item').data('item-id');
-    var section = $(this).closest('.item').data('section-id');
-    // take the url of the clicked image, but swap in the large high res image
-    var imgUrl = e.target.getAttribute('src').replace(/small/, "large");
-    var imgHTML = "<img src=" + imgUrl + ">";
+  $(".item")
+    .find("img")
+    .on("click", function(e){
+      e.preventDefault();
+      $("#board-advice").html("");
 
-    if (section === "shirt"){
-      $('input[name=shirt_id]').val(item_id);
-      $('#shirt-target').html(imgHTML);
-    }
-    if (section === "pants") {
-      $('input[name=pants_id]').val(item_id);
-      $('#pants-target').html(imgHTML);
-    }
-    if (section === "shoes") {
-      $('input[name=shoes_id]').val(item_id);
-      $('#shoes-target').html(imgHTML);
-    }
+      var $item = $(this).closest(".item");
+      var itemId = $item.data("item-id");
+      var section = $item.data("section-id");
+
+      var imgUrl = e.target.getAttribute("src").replace(/small/, "large");
+
+      var imgNode = document.createElement("img");
+      imgNode.src = imgUrl;
+
+      var sectionMap = {
+        shirt: {
+          imgContainerId: "shirt-target",
+          inputName: "shirtId"
+        },
+        pants: {
+          imgContainerId: "pants-target",
+          inputName: "pantsId"
+        },
+        shoes: {
+          imgContainerId: "shoes-target",
+          inputName: "shoesId"
+        }
+      };
+
+      var sectionIds = sectionMap[section];
+
+      $("input[name=" + sectionIds.inputName + "]").val(itemId);
+      console.log("#" + sectionIds.imgContainerId);
+      $("#" + sectionIds.imgContainerId).empty().append(imgNode);
+
+      // if (sectionId === "shirt"){
+      //   $("input[name=shirt_id]").val(itemId);
+      //   $("#shirt-target").html(imgHTML);
+      // }
+      // if (sectionId === "pants") {
+      //   $('input[name=pants_id]').val(itemId);
+      //   $('#pants-target').html(imgHTML);
+      // }
+      // if (sectionId === "shoes") {
+      //   $('input[name=shoes_id]').val(itemId);
+      //   $('#shoes-target').html(imgHTML);
+      // }
   });
 
 });
