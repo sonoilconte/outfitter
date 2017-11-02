@@ -1,37 +1,38 @@
 $(document).ready(function(){
-
-  $(".item")
-    .find("img")
-    .on("click", function(e){
-      e.preventDefault();
-      $("#board-advice").html("");
-
-      var $item = $(this).closest(".item");
-      var itemId = $item.data("item-id");
-      var section = $item.data("section-id");
-      var imgUrl = $item.data("large-img");
-
-      var imgNode = document.createElement("img");
-      imgNode.src = imgUrl;
-
-      var sectionMap = {
-        shirt: {
-          imgContainerId: "shirt-target",
-          inputName: "shirt_id"
-        },
-        pants: {
-          imgContainerId: "pants-target",
-          inputName: "pants_id"
-        },
-        shoes: {
-          imgContainerId: "shoes-target",
-          inputName: "shoes_id"
-        }
-      };
-
-      var sectionIds = sectionMap[section];
-      $("input[name=" + sectionIds.inputName + "]").val(itemId);
-      $("#" + sectionIds.imgContainerId).empty().append(imgNode);
-  });
-
+  var items = document.getElementsByClassName("item");
+  for(var i=0; i<items.length; i++){
+    items[i].addEventListener("click", onItemSelect);
+  }
 });
+
+var onItemSelect = function(e){
+  e.preventDefault();
+  document.getElementById("board-advice").innerHTML = "";
+  var itemNode = this.closest(".item");
+  var itemId = itemNode.getAttribute("data-item-id");
+  var section = itemNode.getAttribute("data-section-id");
+  var imgUrl = itemNode.getAttribute("data-large-img");
+  var imgNode = document.createElement("img");
+  imgNode.src = imgUrl;
+
+  var sectionMap = {
+    shirt: {
+      imgContainerId: "shirt-target",
+      inputName: "shirt_id"
+    },
+    pants: {
+      imgContainerId: "pants-target",
+      inputName: "pants_id"
+    },
+    shoes: {
+      imgContainerId: "shoes-target",
+      inputName: "shoes_id"
+    }
+  };
+
+  var sectionIds = sectionMap[section];
+  document.getElementsByName(sectionIds.inputName)[0].setAttribute("value", itemId);
+  var sectionNode = document.getElementById(sectionIds.imgContainerId);
+  sectionNode.innerHTML = "";
+  sectionNode.appendChild(imgNode);
+};
