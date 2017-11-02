@@ -1,23 +1,21 @@
-"use strict";
-
-$(document).ready(function () {
-  var items = document.getElementsByClassName("item");
-  for (var i = 0; i < items.length; i++) {
+$(document).ready(() => {
+  const items = document.getElementsByClassName("item");
+  for(let i=0; i<items.length; i++){
     items[i].addEventListener("click", onItemSelect);
   }
 });
 
-var onItemSelect = function onItemSelect(e) {
+const onItemSelect = (e) => {
   e.preventDefault();
   document.getElementById("board-advice").innerHTML = "";
-  var itemNode = e.target.closest(".item");
-  var itemId = itemNode.getAttribute("data-item-id");
-  var section = itemNode.getAttribute("data-section-id");
-  var imgUrl = itemNode.getAttribute("data-large-img");
-  var imgNode = document.createElement("img");
+  const itemNode = e.target.closest(".item");
+  const itemId = itemNode.getAttribute("data-item-id");
+  const section = itemNode.getAttribute("data-section-id");
+  const imgUrl = itemNode.getAttribute("data-large-img");
+  let imgNode = document.createElement("img");
   imgNode.src = imgUrl;
 
-  var sectionMap = {
+  const sectionMap = {
     shirt: {
       imgContainerId: "shirt-target",
       inputName: "shirt_id"
@@ -31,9 +29,9 @@ var onItemSelect = function onItemSelect(e) {
       inputName: "shoes_id"
     }
   };
-  var sectionIds = sectionMap[section];
+  const sectionIds = sectionMap[section];
   document.getElementsByName(sectionIds.inputName)[0].setAttribute("value", itemId);
-  var sectionNode = document.getElementById(sectionIds.imgContainerId);
+  let sectionNode = document.getElementById(sectionIds.imgContainerId);
   sectionNode.innerHTML = "";
   sectionNode.appendChild(imgNode);
 };
