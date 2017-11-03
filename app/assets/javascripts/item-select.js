@@ -1,26 +1,40 @@
-$(document).ready(function(){
+"use strict";
 
-  $('.item').find('img').on('click', function(e){
+$(document).ready(function () {
+
+  var onItemSelect = function onItemSelect(e) {
     e.preventDefault();
-    $('#board-advice').html("");
-    var item_id = $(this).closest('.item').data('item-id');
-    var section = $(this).closest('.item').data('section-id');
-    // take the url of the clicked image, but swap in the large high res image
-    var imgUrl = e.target.getAttribute('src').replace(/small/, "large");
-    var imgHTML = "<img src=" + imgUrl + ">";
+    document.getElementById("board-advice").innerHTML = "";
+    var itemNode = e.target.closest(".item");
+    var itemId = itemNode.getAttribute("data-item-id");
+    var section = itemNode.getAttribute("data-section-id");
+    var imgUrl = itemNode.getAttribute("data-large-img");
+    var imgNode = document.createElement("img");
+    imgNode.src = imgUrl;
 
-    if (section === "shirt"){
-      $('input[name=shirt_id]').val(item_id);
-      $('#shirt-target').html(imgHTML);
-    }
-    if (section === "pants") {
-      $('input[name=pants_id]').val(item_id);
-      $('#pants-target').html(imgHTML);
-    }
-    if (section === "shoes") {
-      $('input[name=shoes_id]').val(item_id);
-      $('#shoes-target').html(imgHTML);
-    }
+    var sectionMap = {
+      shirt: {
+        imgContainerId: "shirt-target",
+        inputName: "shirt_id"
+      },
+      pants: {
+        imgContainerId: "pants-target",
+        inputName: "pants_id"
+      },
+      shoes: {
+        imgContainerId: "shoes-target",
+        inputName: "shoes_id"
+      }
+    };
+    var sectionIds = sectionMap[section];
+    document.getElementsByName(sectionIds.inputName)[0].setAttribute("value", itemId);
+    var sectionNode = document.getElementById(sectionIds.imgContainerId);
+    sectionNode.innerHTML = "";
+    sectionNode.appendChild(imgNode);
+  };
+
+  var items = document.getElementsByClassName("item");
+  [].forEach.call(items, function (item) {
+    return item.addEventListener("click", onItemSelect);
   });
-
 });
