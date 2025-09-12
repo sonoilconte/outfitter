@@ -72,8 +72,9 @@ end
 gem 'hirb'
 gem 'rails', '~> 5.2.8.1'
 gem 'nokogiri', '>= 1.12.5'
-# Use postgresql as the database for Active Record
-gem 'pg', '~> 0.18'
+gem 'sqlite3', '~> 1.4'
+
+# gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets

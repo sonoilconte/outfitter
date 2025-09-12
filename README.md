@@ -32,5 +32,5 @@ Outfitter is an app for creating a digital closet and combining clothing items i
   1. Clone and cd into repository
   2. Run `bundle install`
   3. If you would like to seed the database with clothes, run `rails db:reset`
-  3. Run `rails s`
+  3. Run `bundle exec rails s`
   4. Open up a browser and go to http://localhost:3000/
