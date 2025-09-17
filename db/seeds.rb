@@ -25,39 +25,52 @@ casual_friday_items = Item.create!([
   { name: "black boots", brand: "Aldo", category: "shoes" }
 ])
 
-# Attach images (skip if file missing)
-begin
-  casual_friday_items[0].image.attach(
-    io: File.open(Rails.root.join("app/assets/images/shirt_grey.jpeg")),
-    filename: "shirt_grey.jpeg",
-    content_type: "image/jpeg"
-  )
-rescue Errno::ENOENT
-  puts "Image not found: shirt_grey.jpeg"
+serious_business_items = Item.create!([
+  { name: "white dress shirt", brand: "Boss", category: "shirt" },
+  { name: "black slacks", brand: "Banana Republic", category: "pants" },
+  { name: "black dress shoes", brand: "Clarks", category: "shoes" }
+])
+
+weekend_items = Item.create!([
+  { name: "green t-shirt", brand: "H&M", category: "shirt" },
+  { name: "jeans levis", brand: "Levis", category: "pants" },
+  { name: "sneakers", brand: "New Balance", category: "shoes" }
+])
+
+# Map items to their corresponding image files
+images = [
+  { item: casual_friday_items[0], file: "shirt_grey.jpeg" },
+  { item: casual_friday_items[1], file: "pants_dark_jeans.jpeg" },
+  { item: casual_friday_items[2], file: "shoes_black_boots.jpeg" },
+  { item: serious_business_items[0], file: "shirt_boss.jpeg" },
+  { item: serious_business_items[1], file: "pants_black_slacks.jpeg" },
+  { item: serious_business_items[2], file: "shoes_black_oxfords.jpeg" },
+  { item: weekend_items[0], file: "shirt_green_t-shirt.jpeg" },
+  { item: weekend_items[1], file: "pants_jeans_levis.jpeg" },
+  { item: weekend_items[2], file: "shoes_new_balance.jpeg" },
+]
+
+ActiveRecord::Base.transaction do
+  puts "Seeding database..."
+  images.each do |img|
+    path = Rails.root.join("app/assets/images/#{img[:file]}")
+    if File.exist?(path)
+      img[:item].image.attach(
+        io: File.open(path),
+        filename: img[:file],
+        content_type: "image/jpeg"
+      )
+      puts "Attached #{img[:file]} to #{img[:item].name}"
+    else
+      puts "⚠️ Missing file: #{path}"
+    end
+  end
 end
 
-begin
-  casual_friday_items[1].image.attach(
-    io: File.open(Rails.root.join("app/assets/images/pants_dark_jeans.jpeg")),
-    filename: "pants_dark_jeans.jpeg",
-    content_type: "image/jpeg"
-  )
-rescue Errno::ENOENT
-  puts "Image not found: pants_dark_jeans.jpeg"
-end
-
-begin
-  casual_friday_items[2].image.attach(
-    io: File.open(Rails.root.join("app/assets/images/shoes_black_boots.jpeg")),
-    filename: "shoes_black_boots.jpeg",
-    content_type: "image/jpeg"
-  )
-rescue Errno::ENOENT
-  puts "Image not found: shoes_black_boots.jpeg"
-end
-
-# Associate items with outfit
+# Associate items with outfits
 casual_friday.items << casual_friday_items
+serious_business.items << serious_business_items
+weekend.items << weekend_items
 
 puts "Seed complete!"
 puts "Items: #{Item.count}"
