@@ -1,0 +1,16 @@
+<%= render "shared/header" %>
+<div class="container">
+  <div class="row">
+    <div class="col m6">
+      <h1><%= @item.name %></h1>
+      <ul>
+        <li><strong>Brand:</strong> <%= @item.brand %></li>
+        <li><strong>Category:</strong> <%= @item.category %></li>
+      </ul>
+      <%= link_to "Edit", controller: "items", action: "edit", id: @item.id %>
+    </div>
+    <div class="col m6 large-display">
+      <%= image_tag @item.image if @item.image.attached? %>
+    </div>
+  </div>
+</div>

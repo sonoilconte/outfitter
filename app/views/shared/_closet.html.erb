@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="clothing-type-title">
+    shirts
+  </div>
+  <div class="divider"></div>
+  <div class="horizontal">
+    <div>
+      <% shirts = @items.select {|item| item.category == "shirt"} %>
+      <% shirts.each do |item| %>
+      <div class="item left" data-item-id="<%= item.id %>" data-section-id="shirt" data-large-img="<%= item.image.url(:large) %>">
+        <%= image_tag item.image.url(:small) %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="clothing-type-title">
+    pants
+  </div>
+  <div class="divider"></div>
+  <div class="horizontal">
+    <div>
+      <% pants = @items.select {|item| item.category == "pants"} %>
+      <% pants.each do |item| %>
+      <div class="item left" data-item-id="<%= item.id %>" data-section-id="pants" data-large-img="<%= item.image.url(:large) %>">
+        <%= image_tag item.image.url(:small) %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="clothing-type-title">
+    shoes
+  </div>
+  <div class="divider"></div>
+  <div class="horizontal">
+    <div>
+      <% shoes = @items.select{|item| item.category == "shoes"}%>
+      <% shoes.each do |item| %>
+      <div class="item left" data-item-id="<%= item.id %>" data-section-id="shoes" data-large-img="<%= item.image.url(:large) %>">
+        <%= image_tag item.image.url(:small) %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
