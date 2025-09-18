@@ -1,0 +1,34 @@
+<%= render "shared/header" %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col s12 m5">
+      <h1>Create an outfit</h1>
+    </div>
+    <div class="col s12 m7">
+      <div class="row">
+        <%= form_for @outfit, :html => {:class => "form-horizontal"} do |f| %>
+        <div class="col s4">
+          <%= f.text_field :name, placeholder: "Name", :required => true, class: "left" %>
+        </div>
+        <div class="col s4">
+          <%= f.text_field :tag, placeholder: "Tag", class: "left" %>
+        </div>
+          <%= hidden_field_tag "shirt_id", nil, placeholder: "SHIRT ID" %>
+          <%= hidden_field_tag "pants_id", nil, placeholder: "PANTS ID" %>
+          <%= hidden_field_tag "shoes_id", nil, placeholder: "SHOES ID" %>
+        <div class="col s4">
+          <button type="submit" class="btn waves-effect waves-light left">Create Outfit</button>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12 m5">
+    <%= render "shared/closet"%>
+    </div>
+    <div class="col s12 m7">
+      <%= render "shared/builder"%>
+    </div>
+  </div>
+</div>

@@ -14,10 +14,18 @@ Rails.application.routes.draw do
 
   get '/items', to: 'items#index', as: 'items' #index.html.erb
   get '/items/new', to: 'items#new', as: 'new_item' #new.html.erb
-  post '/items', to: 'items#create' #
+  post '/items', to: 'items#create'
   get '/items/:id', to: 'items#show', as: 'item' #show.html.erb
   get '/items/:id/edit', to: 'items#edit', as: 'edit_item' #edit.html.erb
-  patch '/items/:id', to: 'items#update' #
-  delete '/items/:id', to: 'items#destroy' #
+  patch '/items/:id', to: 'items#update'
+  delete '/items/:id', to: 'items#destroy'
+
+  get '/outfits', to: 'outfits#index', as: 'outfits' #index.html.erb
+  get '/outfits/new', to: 'outfits#new', as: 'new_outfit' #new.html.erb
+  post '/outfits', to: 'outfits#create'
+  get '/outfits/:id', to: 'outfits#show', as: 'outfit' #show.html.erb
+  get '/outfits/:id/edit', to: 'outfits#edit', as: 'edit_outfit' #edit.html.erb
+  patch '/outfits/:id', to: 'outfits#update'
+  delete '/outfits/:id', to: 'outfits#destroy'
 
 end

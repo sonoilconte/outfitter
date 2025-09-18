@@ -7,8 +7,8 @@
     <div>
       <% shirts = @items.select {|item| item.category == "shirt"} %>
       <% shirts.each do |item| %>
-      <div class="item left" data-item-id="<%= item.id %>" data-section-id="shirt" data-large-img="<%= item.image.url(:large) %>">
-        <%= image_tag item.image.url(:small) %>
+      <div class="item left" data-item-id="<%= item.id %>" data-section-id="shirt" data-image-url="<%= url_for(item.image) if item.image.attached? %>">
+        <%= image_tag item.image %>
       </div>
       <% end %>
     </div>
@@ -24,8 +24,8 @@
     <div>
       <% pants = @items.select {|item| item.category == "pants"} %>
       <% pants.each do |item| %>
-      <div class="item left" data-item-id="<%= item.id %>" data-section-id="pants" data-large-img="<%= item.image.url(:large) %>">
-        <%= image_tag item.image.url(:small) %>
+      <div class="item left" data-item-id="<%= item.id %>" data-section-id="pants" data-image-url="<%= url_for(item.image) if item.image.attached? %>">
+        <%= image_tag item.image %>
       </div>
       <% end %>
     </div>
@@ -41,8 +41,8 @@
     <div>
       <% shoes = @items.select{|item| item.category == "shoes"}%>
       <% shoes.each do |item| %>
-      <div class="item left" data-item-id="<%= item.id %>" data-section-id="shoes" data-large-img="<%= item.image.url(:large) %>">
-        <%= image_tag item.image.url(:small) %>
+      <div class="item left" data-item-id="<%= item.id %>" data-section-id="shoes" data-image-url="<%= url_for(item.image) if item.image.attached? %>">
+        <%= image_tag item.image %>
       </div>
       <% end %>
     </div>
