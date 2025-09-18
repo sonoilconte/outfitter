@@ -14,7 +14,7 @@
         <label class="btn waves-effect waves-light">
           Choose an image
           <span style="display: none">
-            <%= f.file_field :image, class: "image-input"  %>
+            <%= f.file_field :image, id: "image-input"  %>
           </span>
         </label>
       </div>
@@ -23,7 +23,7 @@
       </div>
       <% end %>
     </div>
-    <div class="col m6 large-display image-preview">
+    <div id="image-preview" class="col m6 large-display">
       <%= image_tag url_for(@item.image.variant(resize_to_limit: [400, 400]).processed) if @item.image.attached? %>
     </div>
   </div>

@@ -2,3 +2,5 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import "./custom/itemSelect.js"
+import "./custom/imagePreview.js"
+
