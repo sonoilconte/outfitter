@@ -25,8 +25,6 @@ class ItemsController < ApplicationController
 
   def update
     item = Item.find_by_id(params[:id])
-    # item.update_attributes(item_params)
-    # redirect_to item_path(item)
     if item.update(item_params)
       redirect_to item_path(item)
     else
