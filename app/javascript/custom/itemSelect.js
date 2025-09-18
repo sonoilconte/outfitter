@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => { 
+// Listen for Turbo page loads to ensure event listener is attached after navigation
+document.addEventListener("turbo:load", () => { 
   const onItemSelect = (e) => {
     e.preventDefault();
     document.getElementById("board-advice").innerHTML = "";
