@@ -10,7 +10,7 @@
       <%= link_to "Edit", controller: "items", action: "edit", id: @item.id %>
     </div>
     <div class="col m6 large-display">
-      <%= image_tag @item.image if @item.image.attached? %>
+      <%= image_tag url_for(@item.image.variant(resize_to_limit: [400, 400]).processed) if @item.image.attached? %>
     </div>
   </div>
 </div>

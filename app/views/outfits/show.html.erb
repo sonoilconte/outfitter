@@ -9,17 +9,17 @@
       <% shoes = @outfit.items.select{ |item| item.category == "shoes"} %>
       <div>
         <% if shirt[0]%>
-          <%= image_tag shirt[0].image %>
+          <%= image_tag url_for(shirt[0].image.variant(resize_to_limit: [300, 300]).processed) if shirt[0].image.attached? %>
         <% end %>
       </div>
       <div>
         <% if pants[0] %>
-          <%= image_tag pants[0].image %>
+          <%= image_tag url_for(pants[0].image.variant(resize_to_limit: [300, 300]).processed) if pants[0].image.attached? %>
         <% end %>
       </div>
       <div>
         <% if shoes[0] %>
-          <%= image_tag shoes[0].image %>
+          <%= image_tag url_for(shoes[0].image.variant(resize_to_limit: [300, 300]).processed) if shoes[0].image.attached? %>
         <% end %>
       </div>
       <%= link_to "Edit", controller: "outfits", action: "edit", id: @outfit.id %>

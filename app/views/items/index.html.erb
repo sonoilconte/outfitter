@@ -21,7 +21,7 @@
             <% shirts.each do |item| %>
             <div class="left">
               <%= link_to item, controller: "items", action: "show", id: item.id do %>
-                <%= image_tag item.image if item.image.attached? %>
+                <%= image_tag url_for(item.image.variant(resize_to_limit: [200, 200]).processed) if item.image.attached? %>
               <% end %>
             </div>
             <% end %>
@@ -40,7 +40,7 @@
             <% pants.each do |item| %>
             <div class="left">
               <%= link_to item, controller: "items", action: "show", id: item.id do %>
-                <%= image_tag item.image if item.image.attached? %>
+                <%= image_tag url_for(item.image.variant(resize_to_limit: [200, 200]).processed) if item.image.attached? %>
               <% end %>
             </div>
             <% end %>
@@ -59,7 +59,7 @@
             <% shoes.each do |item| %>
             <div class="left">
               <%= link_to item, controller: "items", action: "show", id: item.id do %>
-                <%= image_tag item.image if item.image.attached? %>
+                <%= image_tag url_for(item.image.variant(resize_to_limit: [200, 200]).processed) if item.image.attached? %>
               <% end %>
             </div>
             <% end %>

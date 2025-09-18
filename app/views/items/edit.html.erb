@@ -24,7 +24,7 @@
       <% end %>
     </div>
     <div class="col m6 large-display image-preview">
-      <%= image_tag @item.image %>
+      <%= image_tag url_for(@item.image.variant(resize_to_limit: [400, 400]).processed) if @item.image.attached? %>
     </div>
   </div>
   <div class="row">

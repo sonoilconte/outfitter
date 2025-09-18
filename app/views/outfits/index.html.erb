@@ -18,17 +18,17 @@
         <% shoes = outfit.items.select{ |item| item.category == "shoes" }  %>
         <div class="center-align">
           <% if shirt[0] %>
-            <%= image_tag shirt[0].image %>
+            <%= image_tag url_for(shirt[0].image.variant(resize_to_limit: [200, 200]).processed) if shirt[0].image.attached? %>
           <% end %>
         </div>
         <div class="center-align">
           <% if pants[0] %>
-            <%= image_tag pants[0].image %>
+            <%= image_tag url_for(pants[0].image.variant(resize_to_limit: [200, 200]).processed) if pants[0].image.attached? %>
           <% end %>
         </div>
         <div class="center-align">
           <% if shoes[0] %>
-            <%= image_tag shoes[0].image %>
+            <%= image_tag url_for(shoes[0].image.variant(resize_to_limit: [200, 200]).processed) if shoes[0].image.attached? %>
           <% end %>
         </div>
       <% end %>
