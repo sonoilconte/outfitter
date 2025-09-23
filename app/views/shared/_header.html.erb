@@ -1,20 +1,26 @@
 <script type="text/javascript">
-  // $(document).ready( () => {
-  //   $(".button-collapse").sideNav();
-  // });
+  document.addEventListener("turbo:load", () => {
+    const elems = document.querySelectorAll(".sidenav");
+    M.Sidenav.init(elems, {
+      edge: "left",
+      draggable: true
+    });
+  });
 </script>
 
 <nav>
   <div class="nav-wrapper">
     <a href="/" class="brand-logo">Outfitter</a>
-    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+      <i class="material-icons">menu</i>
+    </a>
     <ul class="right hide-on-med-and-down">
         <li><%= link_to "Closet", items_path %></li>
         <li><%= link_to "New Item", new_item_path %></li>
         <li><%= link_to "Outfits", outfits_path %></li>
         <li><%= link_to "New Outfit", new_outfit_path %></li>
     </ul>
-    <ul class="side-nav" id="mobile-demo">
+    <ul class="sidenav" id="mobile-demo">
       <li><%= link_to "Closet", items_path %></li>
       <li><%= link_to "New Item", new_item_path %></li>
       <li><%= link_to "Outfits", outfits_path %></li>
