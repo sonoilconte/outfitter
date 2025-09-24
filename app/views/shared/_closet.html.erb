@@ -1,50 +1,52 @@
-<div class="row">
-  <div class="clothing-type-title">
-    shirts
-  </div>
-  <div class="divider"></div>
-  <div class="horizontal">
-    <div>
-      <% shirts = @items.select {|item| item.category == "shirt"} %>
-      <% shirts.each do |item| %>
-      <div class="item left" data-item-id="<%= item.id %>" data-section-id="shirt" data-image-url="<%= url_for(item.image) if item.image.attached? %>">
-        <%= image_tag url_for(item.image.variant(resize_to_limit: [200, 200]).processed) if item.image.attached? %>
+<div class="closet-container">
+  <div class="row">
+    <div class="clothing-type-title">
+      shirts
+    </div>
+    <div class="divider"></div>
+    <div class="horizontal">
+      <div>
+        <% shirts = @items.select {|item| item.category == "shirt"} %>
+        <% shirts.each do |item| %>
+        <div class="item left" data-item-id="<%= item.id %>" data-section-id="shirt" data-image-url="<%= url_for(item.image) if item.image.attached? %>">
+          <%= image_tag url_for(item.image.variant(resize_to_limit: [200, 200]).processed) if item.image.attached? %>
+        </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
   </div>
-</div>
 
-<div class="row">
-  <div class="clothing-type-title">
-    pants
-  </div>
-  <div class="divider"></div>
-  <div class="horizontal">
-    <div>
-      <% pants = @items.select {|item| item.category == "pants"} %>
-      <% pants.each do |item| %>
-      <div class="item left" data-item-id="<%= item.id %>" data-section-id="pants" data-image-url="<%= url_for(item.image) if item.image.attached? %>">
-        <%= image_tag url_for(item.image.variant(resize_to_limit: [200, 200]).processed) if item.image.attached? %>
+  <div class="row">
+    <div class="clothing-type-title">
+      pants
+    </div>
+    <div class="divider"></div>
+    <div class="horizontal">
+      <div>
+        <% pants = @items.select {|item| item.category == "pants"} %>
+        <% pants.each do |item| %>
+        <div class="item left" data-item-id="<%= item.id %>" data-section-id="pants" data-image-url="<%= url_for(item.image) if item.image.attached? %>">
+          <%= image_tag url_for(item.image.variant(resize_to_limit: [200, 200]).processed) if item.image.attached? %>
+        </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
   </div>
-</div>
 
-<div class="row">
-  <div class="clothing-type-title">
-    shoes
-  </div>
-  <div class="divider"></div>
-  <div class="horizontal">
-    <div>
-      <% shoes = @items.select{|item| item.category == "shoes"}%>
-      <% shoes.each do |item| %>
-      <div class="item left" data-item-id="<%= item.id %>" data-section-id="shoes" data-image-url="<%= url_for(item.image) if item.image.attached? %>">
-        <%= image_tag url_for(item.image.variant(resize_to_limit: [200, 200]).processed) if item.image.attached? %>
+  <div class="row">
+    <div class="clothing-type-title">
+      shoes
+    </div>
+    <div class="divider"></div>
+    <div class="horizontal">
+      <div>
+        <% shoes = @items.select{|item| item.category == "shoes"}%>
+        <% shoes.each do |item| %>
+        <div class="item left" data-item-id="<%= item.id %>" data-section-id="shoes" data-image-url="<%= url_for(item.image) if item.image.attached? %>">
+          <%= image_tag url_for(item.image.variant(resize_to_limit: [200, 200]).processed) if item.image.attached? %>
+        </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
   </div>
 </div>

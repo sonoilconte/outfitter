@@ -123,7 +123,11 @@ select {
   margin-top: -80px;
 }
 
-/* CLOSET PAGE */
+/* CLOSET PARTIAL */
+
+.closet-container {
+  padding-left: 20px;
+}
 
 .divider {
   margin-bottom: 1.091em;
