@@ -4,8 +4,7 @@ test:
 
 local:
   service: Disk
-  root: /data/storage
-  # root: <%= Rails.root.join("storage") %>
+  root: <%= Rails.root.join("storage") %>
 
 # In production, use the persistent volume for ActiveStorage
 # It is the same volume we are using for the SQLite database
